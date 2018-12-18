@@ -4,6 +4,7 @@
   "description": "A Simple IoT Platform - DB Module",
   "main": "index.js",
   "scripts": {
+    "setup": "DEBUG=platziverse:* node setup.js",
     "lint": "standard"
   },
   "repository": {
@@ -17,9 +18,12 @@
   },
   "homepage": "https://github.com/JoshuaPuello/Platziverse#readme",
   "devDependencies": {
+    "debug": "^4.1.0",
     "standard": "^12.0.1"
   },
   "dependencies": {
+    "chalk": "^2.4.1",
+    "inquirer": "^6.2.1",
     "pg": "^7.7.1",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.42.0"
