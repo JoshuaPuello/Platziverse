@@ -1,11 +1,10 @@
 'use strict'
 
-module.exports = async function (config) {gdfgdfgdfgdfg
+module.exports = async function (config) {
+  const Agent = {}
+  const Metric = {}
 
-    const Agent = {}
-    const Metric = {}
-
-    return {
-        Agent, Metric
-    }
+  return {
+    Agent, Metric
+  }
 }
