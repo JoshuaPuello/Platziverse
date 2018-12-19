@@ -10,29 +10,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JoshuaPuello/Platziverse.git"
+    "url": ""
   },
   "author": "Joshua Puello",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JoshuaPuello/Platziverse/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/JoshuaPuello/Platziverse#readme",
+  "homepage": "",
   "devDependencies": {
-    "ava": "^1.0.1",
-    "debug": "^4.1.0",
-    "nyc": "^13.1.0",
-    "proxyquire": "^2.1.0",
-    "sinon": "^7.2.2",
+    "ava": "^0.21.0",
+    "nyc": "^11.1.0",
+    "proxyquire": "^1.8.0",
+    "sinon": "^3.1.0",
     "sqlite3": "^4.0.4",
-    "standard": "^12.0.1"
+    "standard": "^10.0.3"
   },
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^2.1.0",
+    "debug": "^2.6.8",
     "defaults": "^1.0.3",
-    "inquirer": "^6.2.1",
-    "pg": "^7.7.1",
+    "inquirer": "^3.2.1",
+    "minimist": "^1.2.0",
+    "pg": "^7.1.0",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^4.42.0"
+    "sequelize": "^4.4.2"
   }
 }

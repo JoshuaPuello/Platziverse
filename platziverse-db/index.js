@@ -1,10 +1,11 @@
 'use strict'
 
-const defaults = require('defaults')
 const setupDatabase = require('./lib/db')
-const setupAgentModel = require('./models/metric')
-const setupMetricModel = require('./models/agent')
+const setupAgentModel = require('./models/agent')
+const setupMetricModel = require('./models/metric')
 const setupAgent = require('./lib/agent')
+const setupMetric = require('./lib/metric')
+const defaults = require('defaults')
 
 module.exports = async function (config) {
   config = defaults(config, {
@@ -20,11 +21,11 @@ module.exports = async function (config) {
   })
 
   const sequelize = setupDatabase(config)
-  const agentModel = setupAgentModel(config)
-  const metricModel = setupMetricModel(config)
+  const AgentModel = setupAgentModel(config)
+  const MetricModel = setupMetricModel(config)
 
-  agentModel.hasMany(metricModel)
-  metricModel.belongsTo(agentModel)
+  AgentModel.hasMany(MetricModel)
+  MetricModel.belongsTo(AgentModel)
 
   await sequelize.authenticate()
 
@@ -32,10 +33,11 @@ module.exports = async function (config) {
     await sequelize.sync({ force: true })
   }
 
-  const Agent = setupAgent(agentModel)
-  const Metric = {}
+  const Agent = setupAgent(AgentModel)
+  const Metric = setupMetric(MetricModel, AgentModel)
 
   return {
-    Agent, Metric
+    Agent,
+    Metric
   }
 }

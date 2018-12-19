@@ -1,4 +1,3 @@
-/* eslint-disable */
 var jumpToCode = (function init () {
   // Classes of code we would like to highlight
   var missingCoverageClasses = [ '.cbranch-no', '.cstat-no', '.fstat-no' ];
